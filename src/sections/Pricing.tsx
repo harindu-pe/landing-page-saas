@@ -56,7 +56,7 @@ const pricingTiers = [
 
 export const Pricing = () => {
   return (
-    <section className="py-24">
+    <section className="py-24 bg-white">
       <div className="container">
         <div className="max-w-[540px] mx-auto">
           <h2 className="section-title">Pricing</h2>
@@ -77,8 +77,9 @@ export const Pricing = () => {
               features,
             }) => (
               <div
+                key={title}
                 className={cn(
-                  "p-10 border border-[$F1F1F1] rounded-3xl shadow-[0_7px_14px_#EAEAEA] max-w-xs w-full",
+                  "p-10 border border-solid border-[$F1F1F1] rounded-3xl shadow-[0_7px_14px_#EAEAEA] max-w-xs w-full",
                   { "border-black bg-black text-white": inverse === true }
                 )}
               >
@@ -114,8 +115,8 @@ export const Pricing = () => {
                   {buttonText}
                 </Button>
                 <ul className="flex flex-col gap-5 mt-8">
-                  {features.map((feature) => (
-                    <li className="text-sm flex items-center gap-4">
+                  {features.map((feature, index) => (
+                    <li key={index} className="text-sm flex items-center gap-4">
                       <CheckIcon className="size-6" />
                       <span>{feature}</span>
                     </li>
