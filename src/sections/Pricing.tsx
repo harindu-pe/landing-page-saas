@@ -115,13 +115,17 @@ export const Pricing = () => {
                   <span className="text-4xl font-bold tracking-tighter leading-0">
                     ${monthlyPrice}
                   </span>
-                  <span className="tracking-tight font-bold text-black/50">
+                  <span
+                    className={cn("tracking-tight font-bold text-black/50", {
+                      "text-white": inverse === true,
+                    })}
+                  >
                     /month
                   </span>
                 </div>
                 <Button
                   className={cn("w-full mt-[30px]", {
-                    "bg-white text-black": inverse === true,
+                    "bg-white text-black hover:bg-white": inverse === true,
                   })}
                 >
                   {buttonText}
